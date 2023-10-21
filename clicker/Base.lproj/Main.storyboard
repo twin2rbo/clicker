@@ -1,24 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="clicker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iM5-X2-IGg">
+                                <rect key="frame" x="165.66666666666666" y="767" width="62" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TJp-5t-1hM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRN-gQ-Uld">
+                                <rect key="frame" x="96.666666666666686" y="396" width="200" height="60"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Lu8-b6-WDt"/>
+                                    <constraint firstAttribute="width" constant="200" id="iWL-hh-cjm"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Click">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="clickButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lqs-Jk-pOU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clicks: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Iq-bo-1Ll">
+                                <rect key="frame" x="146.66666666666666" y="359" width="100" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ViY-hj-POj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press start button" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJr-2G-sIP">
+                                <rect key="frame" x="96.666666666666686" y="75" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Bpq-US-VjY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0n-kV-HFc">
+                                <rect key="frame" x="121.66666666666669" y="547" width="150" height="35"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="IId-A1-uro"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="+ clicks">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="plusClicksButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EfH-VV-C0B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIM-3b-Hye">
+                                <rect key="frame" x="121.66666666666669" y="642.33333333333337" width="150" height="35"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="L1y-a3-j1c"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="+ time"/>
+                                <connections>
+                                    <action selector="plusTimeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DFB-Qo-HIV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcr-dq-zsq">
+                                <rect key="frame" x="136.66666666666666" y="602" width="119.99999999999997" height="20.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="URc-5W-9pt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelclick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acU-VO-Wv7">
+                                <rect key="frame" x="158.66666666666666" y="506" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="acU-VO-Wv7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1NC-W1-wyl"/>
+                            <constraint firstItem="9Iq-bo-1Ll" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4xS-nG-sAM"/>
+                            <constraint firstItem="o0n-kV-HFc" firstAttribute="top" secondItem="acU-VO-Wv7" secondAttribute="bottom" constant="20" id="Ncq-Pg-KDN"/>
+                            <constraint firstItem="SIM-3b-Hye" firstAttribute="top" secondItem="qcr-dq-zsq" secondAttribute="bottom" constant="20" id="P7b-g0-2sf"/>
+                            <constraint firstItem="qcr-dq-zsq" firstAttribute="top" secondItem="o0n-kV-HFc" secondAttribute="bottom" constant="20" id="Rka-l2-3wy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iM5-X2-IGg" secondAttribute="bottom" constant="16" id="ZLE-bi-Apd"/>
+                            <constraint firstItem="KRN-gQ-Uld" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zi1-56-MxY"/>
+                            <constraint firstItem="iM5-X2-IGg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cyN-je-gd7"/>
+                            <constraint firstItem="GJr-2G-sIP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="dEG-p0-mA9"/>
+                            <constraint firstItem="SIM-3b-Hye" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j3M-PG-UQr"/>
+                            <constraint firstItem="KRN-gQ-Uld" firstAttribute="top" secondItem="9Iq-bo-1Ll" secondAttribute="bottom" constant="16" id="mZt-5o-gDl"/>
+                            <constraint firstItem="GJr-2G-sIP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nqD-ZB-eaJ"/>
+                            <constraint firstItem="qcr-dq-zsq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oW0-e3-5Yo"/>
+                            <constraint firstItem="KRN-gQ-Uld" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sy5-xd-gWm"/>
+                            <constraint firstItem="acU-VO-Wv7" firstAttribute="top" secondItem="KRN-gQ-Uld" secondAttribute="bottom" constant="50" id="v0n-X8-mVL"/>
+                            <constraint firstItem="o0n-kV-HFc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yvd-jX-9ZH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addClickPriceLabel" destination="acU-VO-Wv7" id="BjY-wF-FDV"/>
+                        <outlet property="addTImePriceLabel" destination="qcr-dq-zsq" id="a2c-TY-aHy"/>
+                        <outlet property="clickButton" destination="KRN-gQ-Uld" id="T12-Mn-nTn"/>
+                        <outlet property="clickLabel" destination="9Iq-bo-1Ll" id="Pf6-bq-kP8"/>
+                        <outlet property="plusClickButton" destination="o0n-kV-HFc" id="B8d-Xo-3Lb"/>
+                        <outlet property="plusTimeButton" destination="SIM-3b-Hye" id="jiV-KO-8PN"/>
+                        <outlet property="startButton" destination="iM5-X2-IGg" id="r7F-Pm-vjv"/>
+                        <outlet property="timeLabel" destination="GJr-2G-sIP" id="3am-bZ-CS1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
